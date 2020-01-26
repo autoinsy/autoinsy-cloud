@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: autoinsy-mall
+  datasource:
+    url: jdbc:mysql://localhost:3306/autoinsy_mall?characterEncoding=utf8&useSSL=false&autoReconnect=true&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 801230
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    show-sql: true
+    database: mysql
+    open-in-view: true
+
+  thymeleaf:
+    cache: false
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+server:
+  port: 8088
+  tomcat:
+    uri-encoding: UTF-8
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  registerWithEureka: false
+  fetchRegistry: false
+

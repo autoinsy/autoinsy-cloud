@@ -1,0 +1,67 @@
+package com.autoinsy.mall.entity;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.sql.Timestamp;
+
+@Table
+@Entity(name = "customer_login")
+public class CustomerLogin implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "customer_id",columnDefinition = "bigint(20) auto_increment comment '用户ID'")
+    private long customerId;
+
+    @Column(name = "username",columnDefinition = "varchar(255) null comment '用户登录名'")
+    private String username;
+
+    @Column(name = "password",columnDefinition = "varchar(255) null comment 'md5加密的密码'")
+    private String password;
+
+    @Column(name = "user_stats",columnDefinition = "tinyint(4) null comment '用户状态'")
+    private int userStats;
+
+    @Column(name = "modified_time",columnDefinition = "timestamp(0) null comment '最后修改时间'")
+    private Timestamp modifiedTime;
+
+    public long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(long customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getUserStats() {
+        return userStats;
+    }
+
+    public void setUserStats(int userStats) {
+        this.userStats = userStats;
+    }
+
+    public Timestamp getModifiedTime() {
+        return modifiedTime;
+    }
+
+    public void setModifiedTime(Timestamp modifiedTime) {
+        this.modifiedTime = modifiedTime;
+    }
+}
