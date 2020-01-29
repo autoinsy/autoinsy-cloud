@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 
 @Table
 @Entity(name = "product_category")
-public class ProjectCategory implements Serializable {
+public class ProductCategory implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -2,6 +2,8 @@ package com.autoinsy.mall.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 @Table
 @Entity(name = "customer_login")
@@ -36,16 +38,16 @@ public class OrderMaster implements Serializable {
     private int paymentMethod;
 
     @Column(name = "order_money",columnDefinition = "decimal(8) auto_increment comment '订单金额'")
-    private String orderMoney;
+    private BigDecimal orderMoney;
 
     @Column(name = "district_money",columnDefinition = "decimal(8) auto_increment comment '优惠金额'")
-    private String districtMoney;
+    private BigDecimal districtMoney;
 
     @Column(name = "shipping_money",columnDefinition = "decimal(8) auto_increment comment '运费金额'")
-    private String shippingMoney;
+    private BigDecimal shippingMoney;
 
     @Column(name = "payment_money",columnDefinition = "decimal(8) auto_increment comment '支付金额'")
-    private String paymentMoney;
+    private BigDecimal paymentMoney;
 
     @Column(name = "shipping_comp_name",columnDefinition = "varchar(10) auto_increment comment '快递公司名称'")
     private String shippingCompName;
@@ -54,28 +56,28 @@ public class OrderMaster implements Serializable {
     private String shippingSn;
 
     @Column(name = "create_time",columnDefinition = "timestamp(0) auto_increment comment '下单时间'")
-    private String createTime;
+    private Timestamp createTime;
 
     @Column(name = "shipping_time",columnDefinition = "timestamp(0) auto_increment comment '发货时间'")
-    private String shippingTime;
+    private Timestamp shippingTime;
 
     @Column(name = "pay_time",columnDefinition = "timestamp(0) auto_increment comment '支付时间'")
-    private String payTime;
+    private Timestamp payTime;
 
     @Column(name = "receive_time",columnDefinition = "timestamp(0) auto_increment comment '收货时间'")
-    private String receiveTime;
+    private Timestamp receiveTime;
 
     @Column(name = "order_status",columnDefinition = "int(4) auto_increment comment '订单状态'")
-    private String orderStatus;
+    private int orderStatus;
 
     @Column(name = "order_point",columnDefinition = "int(10) auto_increment comment '订单积分'")
-    private String orderPoint;
+    private int orderPoint;
 
     @Column(name = "invoice_time",columnDefinition = "varchar(100) auto_increment comment '发票抬头'")
     private String invoiceTime;
 
     @Column(name = "modified_time",columnDefinition = "timestamp(0) auto_increment comment '最后修改时间'")
-    private String modifiedTime;
+    private Timestamp modifiedTime;
 
     public long getOrderId() {
         return orderId;
@@ -149,35 +151,35 @@ public class OrderMaster implements Serializable {
         this.paymentMethod = paymentMethod;
     }
 
-    public String getOrderMoney() {
+    public BigDecimal getOrderMoney() {
         return orderMoney;
     }
 
-    public void setOrderMoney(String orderMoney) {
+    public void setOrderMoney(BigDecimal orderMoney) {
         this.orderMoney = orderMoney;
     }
 
-    public String getDistrictMoney() {
+    public BigDecimal getDistrictMoney() {
         return districtMoney;
     }
 
-    public void setDistrictMoney(String districtMoney) {
+    public void setDistrictMoney(BigDecimal districtMoney) {
         this.districtMoney = districtMoney;
     }
 
-    public String getShippingMoney() {
+    public BigDecimal getShippingMoney() {
         return shippingMoney;
     }
 
-    public void setShippingMoney(String shippingMoney) {
+    public void setShippingMoney(BigDecimal shippingMoney) {
         this.shippingMoney = shippingMoney;
     }
 
-    public String getPaymentMoney() {
+    public BigDecimal getPaymentMoney() {
         return paymentMoney;
     }
 
-    public void setPaymentMoney(String paymentMoney) {
+    public void setPaymentMoney(BigDecimal paymentMoney) {
         this.paymentMoney = paymentMoney;
     }
 
@@ -197,51 +199,51 @@ public class OrderMaster implements Serializable {
         this.shippingSn = shippingSn;
     }
 
-    public String getCreateTime() {
+    public Timestamp getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
     }
 
-    public String getShippingTime() {
+    public Timestamp getShippingTime() {
         return shippingTime;
     }
 
-    public void setShippingTime(String shippingTime) {
+    public void setShippingTime(Timestamp shippingTime) {
         this.shippingTime = shippingTime;
     }
 
-    public String getPayTime() {
+    public Timestamp getPayTime() {
         return payTime;
     }
 
-    public void setPayTime(String payTime) {
+    public void setPayTime(Timestamp payTime) {
         this.payTime = payTime;
     }
 
-    public String getReceiveTime() {
+    public Timestamp getReceiveTime() {
         return receiveTime;
     }
 
-    public void setReceiveTime(String receiveTime) {
+    public void setReceiveTime(Timestamp receiveTime) {
         this.receiveTime = receiveTime;
     }
 
-    public String getOrderStatus() {
+    public int getOrderStatus() {
         return orderStatus;
     }
 
-    public void setOrderStatus(String orderStatus) {
+    public void setOrderStatus(int orderStatus) {
         this.orderStatus = orderStatus;
     }
 
-    public String getOrderPoint() {
+    public int getOrderPoint() {
         return orderPoint;
     }
 
-    public void setOrderPoint(String orderPoint) {
+    public void setOrderPoint(int orderPoint) {
         this.orderPoint = orderPoint;
     }
 
@@ -253,11 +255,11 @@ public class OrderMaster implements Serializable {
         this.invoiceTime = invoiceTime;
     }
 
-    public String getModifiedTime() {
+    public Timestamp getModifiedTime() {
         return modifiedTime;
     }
 
-    public void setModifiedTime(String modifiedTime) {
+    public void setModifiedTime(Timestamp modifiedTime) {
         this.modifiedTime = modifiedTime;
     }
 }
