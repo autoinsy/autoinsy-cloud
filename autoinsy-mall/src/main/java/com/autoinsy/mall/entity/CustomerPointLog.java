@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Table
-@Entity(name = "customer_login_log")
+@Entity(name = "customer_point_log")
 public class CustomerPointLog implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

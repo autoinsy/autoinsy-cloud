@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 @Table
-@Entity(name = "customer_login")
+@Entity(name = "order_master")
 public class OrderMaster implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

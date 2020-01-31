@@ -3,6 +3,8 @@ package com.autoinsy.mall.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 @Table
 @Entity(name = "customer_login")
@@ -24,6 +26,18 @@ public class CustomerLogin implements Serializable {
 
     @Column(name = "modified_time",columnDefinition = "timestamp(0) null comment '最后修改时间'")
     private Timestamp modifiedTime;
+
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "customer_id",referencedColumnName = "customer_id")
+    private CustomerInfo customerInfo;
+
+    public CustomerInfo getCustomerInfo() {
+        return customerInfo;
+    }
+
+    public void setCustomerInfo(CustomerInfo customerInfo) {
+        this.customerInfo = customerInfo;
+    }
 
     public long getCustomerId() {
         return customerId;
