@@ -21,14 +21,17 @@ public class CustomerLogin implements Serializable {
     @Column(name = "password",columnDefinition = "varchar(255) null comment 'md5加密的密码'")
     private String password;
 
-    @Column(name = "user_stats",columnDefinition = "tinyint(4) null comment '用户状态'")
+    @Column(name = "user_stats",columnDefinition = "int(4) null comment '用户状态'")
     private int userStats;
 
     @Column(name = "modified_time",columnDefinition = "timestamp(0) null comment '最后修改时间'")
     private Timestamp modifiedTime;
 
+    @Column(name = "customer_code",columnDefinition = "varchar(0) null comment '最后修改时间'",insertable=false,updatable=false)
+    private long customerCode;
+
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "customer_id",referencedColumnName = "customer_id")
+    @JoinColumn(name = "customer_code",referencedColumnName = "customer_id")
     private CustomerInfo customerInfo;
 
     public CustomerInfo getCustomerInfo() {
@@ -37,6 +40,14 @@ public class CustomerLogin implements Serializable {
 
     public void setCustomerInfo(CustomerInfo customerInfo) {
         this.customerInfo = customerInfo;
+    }
+
+    public long getCustomerCode() {
+        return customerCode;
+    }
+
+    public void setCustomerCode(long customerCode) {
+        this.customerCode = customerCode;
     }
 
     public long getCustomerId() {
